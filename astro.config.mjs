@@ -1,6 +1,9 @@
 import { defineConfig } from 'astro/config';
 import { qrcode } from 'vite-plugin-qrcode';
 
+import sanity from "@sanity/astro";
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://test.com/",
@@ -14,4 +17,11 @@ export default defineConfig({
     },
     plugins: [qrcode()]
   },
+  integrations: [sanity({
+    projectId: "vxvtfhhc",
+    dataset: "production",
+    useCdn: false,
+    apiVersion: "2024-07-02",
+    studioBasePath: '/admin'
+  }), react()]
 });
