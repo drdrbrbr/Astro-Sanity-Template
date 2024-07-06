@@ -62,6 +62,45 @@ export default defineType({
     defineArrayMember({
       type: 'image',
       options: {hotspot: true},
+      fields: [
+        {
+          name: 'description',
+          type: 'string',
+          title: 'Description'
+        },
+      ],
+    }),
+    defineArrayMember({
+      title: 'File',
+      name: 'file',
+      type: 'file',
+      fields: [
+        {
+          name: 'description',
+          type: 'string',
+          title: 'Description'
+        },
+      ],
+    }),
+    defineArrayMember({
+      type: 'code',
+      name: 'code',
+      title: 'Code',
+    }),
+    defineArrayMember({
+      type: 'iframe',
+      name: 'iframe',
+      title: 'iframe',
+    }),
+    defineArrayMember({
+      type: 'youtube',
+      name: 'youtube',
+      title: 'YouTube',
+    }),
+    defineArrayMember({
+      type: 'codepen',
+      name: 'codepen',
+      title: 'CodePen',
     }),
   ],
 })

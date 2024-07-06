@@ -1,9 +1,22 @@
 ---
 import Page from "@/layouts/Page.astro";
+import { getPostBySlug, getAllSlugs, getPosts, type Post } from "@/lib/Sanity";
+
+const posts = await getPosts();
+console.log(posts);
 ---
 
 <Page title="TOP" pageClass="index">
   <div class="wrap">
     <h1>TOP</h1>
   </div>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/post/${post.slug.current}`}>{post.title}</a>
+        </li>
+      ))
+    }
+  </ul>
 </Page>
